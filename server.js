@@ -37,7 +37,7 @@ app.get('/products', async (req, res) => {
 })
 
 // // N
-app.get('/new', (req, res) => {
+app.get('/products/new', (req, res) => {
     res.render('new.ejs')
 })
 
@@ -66,6 +66,11 @@ app.get('/products/:id/edit', async (req,res) => {
     const editedProduct = await Product.findById(
         req.params.id,);
         res.render("edit.ejs", {product:editedProduct})
+})
+
+app.post('/products/:id/buy', async (req, res) => {
+    await Product.findByIdAndUpdate(req.params.id, {$inc:{qty:-1}})
+    res.redirect(`/products/${req.params.id}`)
 })
 
 // // S
