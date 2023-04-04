@@ -2,11 +2,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Product = require('./models/products')
 const methodOverride = require('method-override')
+
 const app =  express()
 require('dotenv').config()
-// const PORT = 4000
 
-// const DATABASE_URL = 'mongodb+srv://ryantylerbyrne:xBRE9tT9doahaRF3@cluster0.3lrwy1h.mongodb.net/?retryWrites=true&w=majority'
+
 
 
 
@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended:false}))
 // Middleware
 app.use(methodOverride("_method"))
 app.use(express.urlencoded({ extended: false }));
-
+app.use("/public", express.static('public'));
 
 
 
