@@ -7,14 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+
+    <header>
+        <nav class="show">
+            <a href="/products/">Home</a>
+        </nav>/
+    </header>
+
     <h1>Edit Product</h1>
 <form action="/products/<%=product._id%>?_method=PUT" method="POST">
    
     mame: <input type="text" name="name" value="<%=product.name%>" /><br />
-    description:  <input type="text" name="author" value="<%=product.name%>" /><br />
-    image: <input type="text" name="img" value="<%=product.name%>"> 
-    price: <input type="number" name="price" value="<%=product.name%>">
-    qty: <input type="number" name="qty" value="<%=product.name%>">
+    description:  <input type="text" name="author" value="<%=product.description%>" /><br />
+    image: <input type="text" name="img" value="<%=product.img%>"> 
+    price: <input type="number" name="price" value="<%=product.price%>">
+    qty: <input type="number" name="qty" value="<%=product.qty%>">
     <input type="submit" value="Submit Changes" />
 </body>
 </html>

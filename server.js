@@ -57,8 +57,8 @@ app.put('/products/:id', async (req, res) => {
 
 // C
 app.post('/new', (req, res) => {
-    const Product = new Product(req.body)
-    Product.save().then(res.send("/products"))
+    const product = new Product(req.body)
+    product.save().then(res.redirect("/products"))
 });
 
 // E
@@ -76,7 +76,7 @@ app.post('/products/:id/buy', async (req, res) => {
 // // S
 app.get('/products/:id', async (req, res) => {
     const specifiedProduct = await Product.findById(req.params.id).exec()
-    res.send(specifiedProduct)
+    res.render('show.ejs', {product:specifiedProduct}) 
 });
 
 

@@ -9,8 +9,8 @@
 <body>
     <header>
         <nav class="show">
-            <a href="/products">Home</a>
-            <a href="/new">New Product</a>
+            <a href="/products/">Home</a>
+            
         </nav>/
     </header>
 
@@ -23,7 +23,7 @@
     </ul>
 
     <div class="edit">
-        <a href="/products/<%= product_id %>/edit"><button type="button" id="edit-btn">Edit</button></a>
+        <a href="/products/<%= product._id %>/edit"><button type="button" id="edit-btn">Edit</button></a>
 
         <form action="/products/<%= product._id%>?_method=DELETE" method="POST">
             <input id="delete" type="submit" value="delete" id="delete-btn">
