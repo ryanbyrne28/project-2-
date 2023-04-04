@@ -14,12 +14,12 @@
 		<ul>
 			<% Products.forEach(product => { %>
 				<li>
-				  <a href="/products/<%=product._id %>"> <%=product.name %>   </a>
+				 <a href="/products/<%=product._id %>"> <%=product.name %>   </a>
 				  <img src="<%= product.img%>">
 				  <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
 					<input type="submit" value="DELETE" />
 				  </form>
-				  <a href="/products/<%=product._id %>/edit">Edit</a>
+				 <div> <a href="/products/<%=product._id %>/edit">Edit</a> </div>
 				</li>
 				<% }) %>
 		</ul>

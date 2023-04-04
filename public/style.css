@@ -1,3 +1,5 @@
+
+
 body{
     background-color: lightgray;
     list-style-type: none;
@@ -16,9 +18,18 @@ li::marker{
     color: lightgray;
 }
 
-a{
-    align-items: center;
+div{
+    text-decoration: underline;
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    align-items: center;
     color:  black;
     text-decoration: none;
 }
@@ -29,12 +40,15 @@ h1{
     font-style: italic;
 }
 li{
+    align-content: center;
     text-align: center;
 }
 #ul{
     list-style-type: none;
     text-align: center;
 }
+
+
 
 a:visited{ 
     text-decoration: none;
@@ -44,8 +58,12 @@ a:hover{
 }
 img{
     background-color: lightgray;
+    margin: 0%;
+    border: 0cap;
     text-align: center;
     width: 100px;
     height: 100px;
-    padding: 30px;
+    padding: 40px;
 }
+
+
