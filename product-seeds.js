@@ -1,6 +1,6 @@
 const products = require('./models/products')
 
-cont mongoose = require('mongoose')
+const mongoose = require('mongoose')
 const products = require('./models/products')
 
 

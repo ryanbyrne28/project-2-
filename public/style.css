@@ -1,6 +1,7 @@
 
 
 body{
+    margin-bottom: auto;
     background-color: lightgray;
     list-style-type: none;
     flex-direction: column;
@@ -25,7 +26,22 @@ div{
     justify-content: center;
 }
 
+nav{
+    display: flex;
+    margin-top: auto;
+    text-align: bottom;
+    display: inline-block;
+    margin: auto;
+    align-items: center;
+    color:  black;
+    text-decoration: none;
+}
+
 a{
+    padding: auto;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
     text-align: center;
     display: inline-block;
     margin: auto;
@@ -40,6 +56,7 @@ h1{
     font-style: italic;
 }
 li{
+    margin-top: auto;
     align-content: center;
     text-align: center;
 }
@@ -56,14 +73,14 @@ a:visited{
 a:hover{
     text-decoration: non; color: red;
 }
-img{
-    background-color: lightgray;
-    margin: 0%;
-    border: 0cap;
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    padding: 40px;
-}
 
+
+img{
+    height: 400px;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    mix-blend-mode: multiply;
+}
 
