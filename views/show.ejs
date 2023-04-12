@@ -12,22 +12,22 @@
         <nav class="show">
             <a href="/products/">Home</a>
             
-        </nav>/
+        </nav>
     </header>
 
     <ul class="List">
         <li id="title"><%=product.name %></li>
-        <li>Description: <%=product.description %></li>
-        <li>Quantity in stock: <%=product.qty%></li>
-        <li>Price: $<%=product.price%></li>
+        <li id="description"><%=product.description %></li>
+        <li>Quantity in Stock: <%=product.qty%></li>
+        <li id="price">Asking Price: $<%=product.price%></li>
         <img src="<%=product.img %>" alt="product picture">
     </ul>
 
     <div class="edit">
-        <a href="/products/<%= product._id %>/edit"><button type="button" id="edit-btn">Edit</button></a>
+        <a href="/products/<%= product._id %>/edit"><button type="button" id="edit-btn">Update Watch</button></a>
 
         <form action="/products/<%= product._id%>?_method=DELETE" method="POST">
-            <input id="delete" type="submit" value="delete" id="delete-btn">
+            <input id="delete" type="submit" value="Remove Listing" id="delete-btn">
         </form>
 
         <form method="POST" action="/products/<%= product._id %>/buy">
@@ -44,8 +44,50 @@
 </html>
 
 <style>
+input#delete{
+    position: relative;
+    margin-top: 100%;
+}
+
+li{
+    margin: 5px;
+}
+
+li#description{
+    padding: 10px;
+    font-style: italic;
+    font-size:large;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
     button#buy-btn{
 display: block;
-color: green;
+max width: 300px;
+margin: auto;
+align-items: center;
+text-align: center;
+display: flex;
+display: block;
+background-color: green;
+color: white;
+padding: 10px 10px;
+border-radius: 50%;
     }
+
+button#buy-btn:hover{
+background-color: white;
+color: green;
+}
+
+
+li#title{
+    font-size: larger;
+    margin: 15px;
+    font-weight: bold;
+}
 </style>
