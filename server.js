@@ -35,7 +35,7 @@ app.use('/products', productsController)
 
 
 app.get('/', (req, res) => {
-    res.render('index.ejs')
+    res.render('home.ejs')
 })
 
 
