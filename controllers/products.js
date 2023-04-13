@@ -12,18 +12,18 @@ mongoose.connect(process.env.DATABASE_URL,{
 productsRouter.use(express.urlencoded({extended:false}))
 
 // I
-productsRouter.get('/products', async (req, res) => {
+productsRouter.get('/', async (req, res) => {
     const allProducts = await Product.find({})
-    res.render('index.ejs',{Products: allProducts})
+    res.render('products/index.ejs',{Products: allProducts})
 })
 
 // // N
-productsRouter.get('/products/new', (req, res) => {
-    res.render('new.ejs')
+productsRouter.get('/new', (req, res) => {
+    res.render('products/new.ejs')
 })
 
 // // D
-productsRouter.delete('/products/:id', async (req, res) => {
+productsRouter.delete('/:id', async (req, res) => {
     await Product.findOneAndDelete(req.params.id);
     res.redirect('/products');
 })
@@ -31,7 +31,7 @@ productsRouter.delete('/products/:id', async (req, res) => {
 
 
 // U
-productsRouter.put('/products/:id', async (req, res) => {
+productsRouter.put('/:id', async (req, res) => {
     await Product.findByIdAndUpdate(req.params.id, req.body,{new:true});
     res.redirect(`/products/${req.params.id}`)
 })
@@ -43,21 +43,21 @@ productsRouter.post('/new', (req, res) => {
 });
 
 // E
-productsRouter.get('/products/:id/edit', async (req,res) => {
+productsRouter.get('/:id/edit', async (req,res) => {
     const editedProduct = await Product.findById(
         req.params.id,);
-        res.render("edit.ejs", {product:editedProduct})
+        res.render("products/edit.ejs", {product:editedProduct})
 })
 
-productsRouter.post('/products/:id/buy', async (req, res) => {
+productsRouter.post('/:id/buy', async (req, res) => {
     await Product.findByIdAndUpdate(req.params.id, {$inc:{qty:-1}})
     res.redirect(`/products/${req.params.id}`)
 })
 
 // // S
-productsRouter.get('/products/:id', async (req, res) => {
+productsRouter.get('/:id', async (req, res) => {
     const specifiedProduct = await Product.findById(req.params.id).exec()
-    res.render('show.ejs', {product:specifiedProduct}) 
+    res.render('products/show.ejs', {product:specifiedProduct}) 
 });
 
 module.exports = productsRouter
