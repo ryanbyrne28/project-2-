@@ -44,9 +44,37 @@
 </html>
 
 <style>
+
+html{
+    padding: 0%;
+    margin: auto;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+form{
+    display: inline-block;
+    margin-left: -85px;
+    margin-right: 1px;
+    text-align: left;
+    position: sticky;
+    justify-content: center;
+}
+
 input#delete{
+    text-align: left;
     position: relative;
-    margin-top: 100%;
+    padding: -30px;
+    margin-top: 150%;
+    margin-left: -10px;
 }
 
 li{
@@ -59,25 +87,42 @@ li#description{
     font-size:large;
 }
 
+div.edit{
+    justify-content: center;
+}
+
 a{
+
+    font-size: 135%;
     display: flex;
     justify-content: center;
     text-align: center;
 }
 
     button#buy-btn{
-display: block;
-max width: 300px;
-margin: auto;
-align-items: center;
+        --background: green;
+--text: #fff;
+--cart: #fff;
+--tick: var(--background);
+position: relative;
+border: none;
+background: none;
+padding: 8px 28px;
+border-radius: 8px;
+-webkit-appearance: none;
+-webkit-tap-highlight-color: transparent;
+-webkit-mask-image: -webkit-radial-gradient(white, black);
+overflow: hidden;
+cursor: pointer;
 text-align: center;
-display: flex;
-display: block;
-background-color: green;
-color: white;
-padding: 10px 10px;
-border-radius: 50%;
-    }
+min-width: 144px;
+color: var(--text);
+background: var(--background);
+transform: scale(var(--scale, 1));
+transition: transform 0.4s cubic-bezier(0.36, 1.01, 0.32, 1.27);
+}
+
+
 
 button#buy-btn:hover{
 background-color: white;
@@ -90,4 +135,9 @@ li#title{
     margin: 15px;
     font-weight: bold;
 }
+
+li#price{
+    padding: 5px;
+}
+
 </style>
