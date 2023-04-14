@@ -10,7 +10,7 @@ Some of the challenges I faced:
 
 Entire CSS and overall user interface.  I wanted to keep it as simple and user friendly as possinle, not complicating the buying process.
 Setting up the Heroku deployment
-
+Minimal typing erros from lack of double checking and typing too fast.
 
 
 Features
