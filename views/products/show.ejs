@@ -15,22 +15,14 @@
         </nav>
     </header>
 
-    <ul class="List">
-        <li id="title"><%=product.name %></li>
-        <li id="description"><%=product.description %></li>
-        <li>Quantity in Stock: <%=product.qty%></li>
-        <li id="price">Asking Price: $<%=product.price%></li>
+    <div class="List">
+        <div id="title"><%=product.name %></div>
+        <div id="description"><%=product.description %></div>
+        <div>Quantity in Stock: <%=product.qty%></div>
+        <div id="price">Asking Price: $<%=product.price%></div>
         <img src="<%=product.img %>" alt="product picture">
-    </ul>
-
-    <div class="edit">
-        <a href="/products/<%= product._id %>/edit"><button type="button" id="edit-btn">Update Watch</button></a>
-
-        <form action="/products/<%= product._id%>?_method=DELETE" method="POST">
-            <input id="delete" type="submit" value="Remove Listing" id="delete-btn">
-        </form>
-
-        <form method="POST" action="/products/<%= product._id %>/buy">
+    </div>
+    <form class="buy" method="POST" action="/products/<%= product._id %>/buy">
         <% if(product.qty <= 0){ %>
             <button type="hidden"></button>
             <h4>Out of stock</h4>
@@ -38,6 +30,14 @@
             <button id="buy-btn"type="submit">Buy</button>
         <% } %>
         </form>
+    <div class="edit">
+        <a href="/products/<%= product._id %>/edit"><button type="button" id="edit-btn">Update Watch</button></a>
+
+        <form action="/products/<%= product._id%>?_method=DELETE" method="POST">
+            <input id="delete" type="submit" value="Remove Listing" id="delete-btn">
+        </form>
+
+        
     </div>
 
 </body>
@@ -45,13 +45,16 @@
 
 <style>
 
+.buy{
+    padding: 10px;
+}
+
 html{
     padding: 0%;
     margin: auto;
 }
 
 body{
-    display: flex;
     justify-content: center;
     margin-top: 5%;
     align-items: center;
@@ -60,16 +63,14 @@ body{
 
 
 
-form{
-    display: inline-block;
-    margin-left: -85px;
-    margin-right: 1px;
-    text-align: left;
-    position: sticky;
-    justify-content: center;
+
+
+.list{
+    padding-bottom: 10px;
 }
 
 input#delete{
+    bottom: 0;
     text-align: left;
     position: relative;
     padding: -30px;
@@ -81,13 +82,15 @@ li{
     margin: 5px;
 }
 
-li#description{
+div#description{
     padding: 10px;
     font-style: italic;
-    font-size:large;
+    font-size:x-large;
 }
 
-div.edit{
+.edit{
+    align-items: center;
+    align-content: center;
     justify-content: center;
 }
 
@@ -100,13 +103,15 @@ a{
 }
 
     button#buy-btn{
-        --background: green;
+margin: 0 auto;
+ --background: green;
 --text: #fff;
 --cart: #fff;
 --tick: var(--background);
 position: relative;
 border: none;
 background: none;
+padding-bottom: 10px;
 padding: 8px 28px;
 border-radius: 8px;
 -webkit-appearance: none;
@@ -130,14 +135,15 @@ color: green;
 }
 
 
-li#title{
-    font-size: larger;
+div#title{
+    font-size: 30px;
     margin: 15px;
     font-weight: bold;
 }
 
-li#price{
+div#price{
     padding: 5px;
+    font-size: 18px;
 }
 
 </style>
