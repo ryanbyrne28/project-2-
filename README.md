@@ -4,7 +4,7 @@
 Watch Shop Project 2
 A watch market showing available watches for purchase and the ability to post a watch for sale.
 
-I implemented a simple joke generator using CRUD and ajax as well as JS to render the store 
+I implemented a simple shop using CRUD and ajax as well as JS to render the store 
 
 Some of the challenges I faced:
 
